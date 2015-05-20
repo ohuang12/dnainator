@@ -49,5 +49,7 @@ public class DNAinator extends Application {
 		stage.setMinWidth(MIN_WIDTH);
 		stage.setWidth(bounds.getWidth());
 		stage.setHeight(bounds.getHeight());
+		/* Add this for better Windows LAF. */
+		stage.setMaximized(true);
 	}
 }
