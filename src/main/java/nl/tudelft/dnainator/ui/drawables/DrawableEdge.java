@@ -7,7 +7,7 @@ import nl.tudelft.dnainator.ui.widgets.contexts.EdgeContext;
 
 /**
  * The drawable edge is the JavaFX counterpart of
- * {@link nl.tudelft.dnainator.core.Edge}.
+ * {@link nl.tudelft.dnainator.core.impl.Edge}.
  */
 public class DrawableEdge extends Line {
 	/**
@@ -49,5 +49,14 @@ public class DrawableEdge extends Line {
 					- (src.getLocalToRoot().getTy() + src.getLayoutY());
 			}
 		});
+	}
+
+	/**
+	 * Sets the given styleClass to the DrawableEdge. It makes sure every style class
+	 * starting with "color" is removed so only one color at a time is set.
+	 * @param styleClass The name of the style class. It <strong>must</strong> start with "color".
+	 */
+	public void color(String styleClass) {
+		getStyleClass().filtered(e -> e.startsWith("color")).setAll(styleClass);
 	}
 }
