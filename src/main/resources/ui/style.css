@@ -1,3 +1,103 @@
+/* Color palette (21 colors) */
+/* http://tango.freedesktop.org/Tango_Icon_Theme_Guidelines */
+/* excluding Butter/Scarlet Red */
+ 
+/* Orange */
+.color-0 {
+	-fx-fill: #fcaf3e;
+	-fx-stroke: #fcaf3e;
+}
+.color-1 {
+	-fx-fill: #f57900;
+	-fx-stroke: #f57900;
+}
+.color-2 {
+	-fx-fill: #ce5c00;
+	-fx-stroke: #ce5c00;
+}
+ 
+/* Chocolate */
+.color-3 {
+	-fx-fill: #e9b96e;
+	-fx-stroke: #e9b96e;
+}
+.color-4 {
+	-fx-fill: #c17d11;
+	-fx-stroke: #c17d11;
+}
+.color-5 {
+	-fx-fill: #8f5902;
+	-fx-stroke: #8f5902;
+}
+
+/* Chameleon */
+.color-6 {
+	-fx-fill: #e9b96e;
+	-fx-stroke: #e9b96e;
+}
+.color-7 {
+	-fx-fill: #c17d11;
+	-fx-stroke: #c17d11;
+}
+.color-8 {
+	-fx-fill: #8f5902;
+	-fx-stroke: #8f5902;
+}
+
+/* Sky Blue */
+.color-9 {
+	-fx-fill: #729fcf;
+	-fx-stroke: #729fcf;
+}
+.color-10 {
+	-fx-fill: #3465a4;
+	-fx-stroke: #3465a4;
+}
+.color-11 {
+	-fx-fill: #204a87;
+	-fx-stroke: #204a87;
+}
+
+/* Plum */
+.color-12 {
+	-fx-fill: #ad7fa8; 
+	-fx-stroke: #ad7fa8;
+}
+.color-13 {
+	-fx-fill: #75507b;
+	-fx-stroke: #75507b;
+}
+.color-14 {
+	-fx-fill: #5c3566;
+	-fx-stroke: #5c3566;
+}
+
+/* Aluminium */
+.color-15 {
+	-fx-fill: #eeeeec;
+	-fx-stroke: #eeeeec;
+}
+.color-16 {
+	-fx-fill: #d3d7cf;
+	-fx-stroke: #d3d7cf;
+}
+.color-17 {
+	-fx-fill: #babdb6;
+	-fx-stroke: #babdb6;
+}
+.color-18 {
+	-fx-fill: #888a85;
+	-fx-stroke: #888a85;
+}
+.color-19 {
+	-fx-fill: #555753;
+	-fx-stroke: #555753;
+}
+.color-20 {
+	-fx-fill: #2e3436;
+	-fx-stroke: #2e3436;
+}
+
 .dialog-pane .button-bar {
 	-fx-border-color: #D4D4D4 #FFFFFF #FFFFFF #FFFFFF;
 }
