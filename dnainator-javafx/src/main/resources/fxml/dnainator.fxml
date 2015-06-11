@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.CheckMenuItem?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -8,7 +12,8 @@
 <?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.input.KeyCodeCombination?>
 <?import javafx.scene.layout.BorderPane?>
-<BorderPane fx:id="root" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nl.tudelft.dnainator.javafx.controllers.WindowController">
+
+<BorderPane fx:id="root" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nl.tudelft.dnainator.javafx.controllers.WindowController">
    <top>
       <MenuBar useSystemMenuBar="true" BorderPane.alignment="CENTER">
         <menus>
@@ -71,7 +76,7 @@
           </Menu>
             <Menu mnemonicParsing="false" text="Navigate">
               <items>
-                <MenuItem mnemonicParsing="false" text="Jump to node..." />
+                <MenuItem mnemonicParsing="false" onAction="#jumpNodeAction" text="Jump to node..." />
                   <MenuItem mnemonicParsing="false" text="Jump to sequence..." />
               </items>
             </Menu>
@@ -90,10 +95,15 @@
         </menus>
       </MenuBar>
    </top>
-   <center>
-      <fx:include fx:id="welcome" source="welcome.fxml"/>
-   </center>
    <left>
-      <fx:include fx:id="fileOpen" source="openpane.fxml"/>
+      <fx:include fx:id="fileOpen" source="openpane.fxml" />
    </left>
+   <center>
+      <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <fx:include fx:id="welcome" source="welcome.fxml" />
+            <fx:include fx:id="jump" source="jump.fxml" />
+         </children>
+      </StackPane>
+   </center>
 </BorderPane>

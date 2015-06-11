@@ -25,6 +25,9 @@ public class WindowController {
 	private FileOpenController fileOpenController;
 	@SuppressWarnings("unused") @FXML
 	private WelcomeController welcomeController;
+	@SuppressWarnings("unused") @FXML
+	private JumpController jumpController;
+	
 	private StrainView strainView;
 	private PhylogeneticView phyloView;
 
@@ -76,5 +79,10 @@ public class WindowController {
 	@SuppressWarnings("unused") @FXML
 	private void zoomOutAction(ActionEvent e) {
 		strainView.zoomOut();
+	}
+	
+	@SuppressWarnings("unused") @FXML
+	private void jumpNodeAction(ActionEvent e) {
+		jumpController.toggle();
 	}
 }

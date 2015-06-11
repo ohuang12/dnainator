@@ -54,10 +54,10 @@ public abstract class SlidingAnimation extends TransitionAnimation {
 			pane.setTranslateX(size - newSize);
 		} else if (pos == Position.TOP) {
 			pane.setPrefHeight(newSize);
-			pane.setTranslateY(size - newSize);
+			pane.setTranslateY(newSize - size);
 		} else if (pos == Position.BOTTOM) {
 			pane.setPrefHeight(newSize);
-			pane.setTranslateY(newSize - size);
+			pane.setTranslateY(size - newSize);
 		}
 	}
 	
