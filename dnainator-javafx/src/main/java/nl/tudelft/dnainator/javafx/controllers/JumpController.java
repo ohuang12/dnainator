@@ -39,6 +39,7 @@ public class JumpController {
 		
 		if (key == KeyCode.ENTER) {
 			String text = searchField.getText();
+			jumpTo.requestFocus();
 			System.out.println(text);
 		}
 	}

@@ -35,7 +35,7 @@ public class DNAinator extends Application {
 			primaryStage.getIcons().add(new Image(getClass().getResourceAsStream(ICON)));
 			primaryStage.setMinWidth(MIN_WIDTH);
 			primaryStage.setMinHeight(MIN_HEIGHT);
-
+			
 			notifyPreloader(new Preloader.ProgressNotification(1));
 
 			try {
