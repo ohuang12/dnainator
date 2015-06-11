@@ -4,7 +4,6 @@ import javafx.scene.control.TextField;
 import nl.tudelft.dnainator.javafx.widgets.animations.DownSlideAnimation;
 import nl.tudelft.dnainator.javafx.widgets.animations.SlidingAnimation;
 import nl.tudelft.dnainator.javafx.widgets.animations.TransitionAnimation.Position;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -18,8 +17,19 @@ public class JumpController {
 	@SuppressWarnings("unused") @FXML private VBox jumpTo;
 	@SuppressWarnings("unused") @FXML private TextField searchField;
 	
-	@SuppressWarnings("unused") @FXML 
-	private void jumpNodeAction(ActionEvent a) {
+	/**
+	 * Jump to a specific node.
+	 */
+	public void jumpNode() {
+		searchField.setPromptText("Jump to node");
+		toggle();
+	}
+	
+	/**
+	 * Jump to a specific sequence.
+	 */
+	public void jumpSequence() {
+		searchField.setPromptText("Jump to sequence");
 		toggle();
 	}
 	
@@ -32,7 +42,6 @@ public class JumpController {
 			System.out.println(text);
 		}
 	}
-
 
 	@SuppressWarnings("unused") @FXML
 	private void initialize() {

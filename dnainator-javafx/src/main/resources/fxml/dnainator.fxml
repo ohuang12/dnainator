@@ -77,7 +77,7 @@
             <Menu mnemonicParsing="false" text="Navigate">
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#jumpNodeAction" text="Jump to node..." />
-                  <MenuItem mnemonicParsing="false" text="Jump to sequence..." />
+                  <MenuItem mnemonicParsing="false" onAction="#jumpSequenceAction" text="Jump to sequence..." />
               </items>
             </Menu>
           <Menu mnemonicParsing="false" text="Filter">

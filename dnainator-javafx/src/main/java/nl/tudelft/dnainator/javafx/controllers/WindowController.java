@@ -83,6 +83,11 @@ public class WindowController {
 	
 	@SuppressWarnings("unused") @FXML
 	private void jumpNodeAction(ActionEvent e) {
-		jumpController.toggle();
+		jumpController.jumpNode();
+	}
+	
+	@SuppressWarnings("unused") @FXML
+	private void jumpSequenceAction(ActionEvent e) {
+		jumpController.jumpSequence();
 	}
 }
