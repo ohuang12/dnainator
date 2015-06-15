@@ -81,3 +81,7 @@ Minimap .view {
 Minimap .spacer {
 	-fx-fill: #310C0C;
 }
+
+StrainControl .jump-invalid-prompt {
+	-fx-prompt-text-fill: red;
+}
