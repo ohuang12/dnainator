@@ -70,6 +70,7 @@ public class StrainControl extends VBox {
 	}
 
 	private void gotoAnnotation(String inputText) {
+		resetPromptText(ANNOTATION);
 		if (previousInput != null && previousInput.equals(inputText)
 				&& attachedAnnotations != null && !attachedAnnotations.isEmpty()) {
 			gotoNextAnnotationNode();
@@ -81,9 +82,13 @@ public class StrainControl extends VBox {
 	}
 
 	private void gotoNextAnnotationNode() {
-		String next = attachedAnnotations.iterator().next();
-		attachedAnnotations.remove(next);
-		strainView.gotoNode(next);
+		if (attachedAnnotations != null) {
+			String next = attachedAnnotations.iterator().next();
+			attachedAnnotations.remove(next);
+			strainView.gotoNode(next);
+		} else {
+			promptInvalid();
+		}
 	}
 	
 	private void setupTextField(String name) {

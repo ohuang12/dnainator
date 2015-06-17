@@ -11,6 +11,7 @@ import nl.tudelft.dnainator.javafx.widgets.Minimap;
 import nl.tudelft.dnainator.javafx.widgets.StrainControl;
 
 import java.util.Collection;
+import java.util.NoSuchElementException;
 
 /**
  * An implementation of {@link AbstractView} for displaying DNA strains.
@@ -135,12 +136,16 @@ public class StrainView extends AbstractView {
 	 * @return The IDs of the {@link EnrichedSequenceNode}s beloning to the given gene.
 	 */
 	public Collection<String> getAnnotatedNodeIDs(String geneName) {
-		Annotation annotation = graph.getAnnotations().getAll().stream()
-				.filter(a -> geneName.length() > GENE_LENGTH
-						&& a.getGeneName().toLowerCase().contains(geneName.toLowerCase()))
-				.findFirst()
-				.get();
-		return annotation.getAnnotatedNodes();
+		try {
+			Annotation annotation = graph.getAnnotations().getAll().stream()
+					.filter(a -> geneName.length() > GENE_LENGTH
+							&& a.getGeneName().toLowerCase().contains(geneName.toLowerCase()))
+					.findFirst()
+					.get();
+			return annotation.getAnnotatedNodes();
+		} catch (NoSuchElementException nse) {
+			return null;
+		}
 	}
 
 	/**
