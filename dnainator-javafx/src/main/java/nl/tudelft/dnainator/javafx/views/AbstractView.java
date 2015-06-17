@@ -137,9 +137,6 @@ public abstract class AbstractView extends Pane {
 					center.getY() - toCenter.getY() - translate.getY());
 			newScale = scale.createConcatenation(new Scale(zoom, zoom,
 										world.getX(), world.getY()));
-			if (newScale.getMyy() > ZOOM_OUT_BOUND && newScale.getMxx() < ZOOM_IN_BOUND) {
-				scale.setToTransform(newScale);
-			}
 		} catch (NonInvertibleTransformException e) {
 			e.printStackTrace();
 		}

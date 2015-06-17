@@ -67,6 +67,14 @@ public class StrainView extends AbstractView {
 		translate.setY(y * scale.getMxx());
 		updateStrain();
 	}
+	
+	/**
+	 * Center view on a node given the drawable.
+	 * @param node the node to be centered vertically.
+	 */
+	public void centerNodeVertically(ClusterDrawable node) {
+		translate.setY(-node.getTranslateY() * strain.getRankWidth());
+	}
 
 	@Override
 	public void zoom(double delta, Point2D center) {
@@ -96,15 +104,13 @@ public class StrainView extends AbstractView {
 		}
 	}
 
+	//FIXME: Last resort
 	/**
-	 * Sets the panning to the rank of the given {@link EnrichedSequenceNode} in the {@link Strain}.
-	 * @param id The ID of the {@link EnrichedSequenceNode} whose rank to go to.
+	 * Last resort...
+	 * @param id
 	 */
 	public void gotoRank(String id) {
-		EnrichedSequenceNode node = graph.getNode(id);
-		if (node != null) {
-			gotoRank(node.getRank());
-		}
+		gotoRank(Integer.parseInt(id));
 	}
 
 	/**
@@ -116,9 +122,11 @@ public class StrainView extends AbstractView {
 	public void gotoNode(String id) {
 		EnrichedSequenceNode node = graph.getNode(id);
 		ClusterDrawable cluster = strain.getClusters().get(id);
-		if (node != null && cluster != null) {
-			setPan(-node.getRank() * strain.getRankWidth(),
-					cluster.getTranslateY() * strain.getRankWidth());
+		if (node != null) {
+			setPan(-node.getRank() * strain.getRankWidth(), 0);
+			if (cluster != null) {
+				centerNodeVertically(cluster);
+			}
 		}
 	}
 

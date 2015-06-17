@@ -59,7 +59,7 @@ public class StrainControl extends VBox {
 		jumpTo.setOnAction(e -> jump(ANNOTATION, bool -> !bool, this::gotoAnnotation));
 	}
 
-	private void jump(String reset, Predicate<Boolean> predicate, Consumer<String> function) {
+	private <T> void jump(String reset, Predicate<Boolean> predicate, Consumer<String> function) {
 		String inputText = jumpTo.getCharacters().toString();
 		if (predicate.test(isPositiveInteger(inputText))) {
 			resetPromptText(reset);
@@ -83,7 +83,7 @@ public class StrainControl extends VBox {
 	private void gotoNextAnnotationNode() {
 		String next = attachedAnnotations.iterator().next();
 		attachedAnnotations.remove(next);
-		strainView.gotoRank(next);
+		strainView.gotoNode(next);
 	}
 	
 	private void setupTextField(String name) {
